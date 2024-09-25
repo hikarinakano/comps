@@ -2,13 +2,32 @@
 import Button from "./components/Button";
 
 function App() {
-  return (
-    <div className="App">
-      <Button primary>Click me!</Button>
-      <Button secondary>Hey!</Button>
-      <Button danger>Call me!</Button>
-    </div>
-  );
+    return (
+      <div>
+        <div>
+          <Button success primary rounded outline>
+            Click me!!
+          </Button>
+        </div>
+        <div>
+          <Button danger outline>
+            Buy Now!
+          </Button>
+        </div>
+        <div>
+          <Button warning>See Deal!</Button>
+        </div>
+        <div>
+          <Button secondary outline>
+            Hide Ads!
+          </Button>
+        </div>
+        <div>
+          <Button secondary rounded>
+            Something!
+          </Button>
+        </div>
+      </div>
+    );
 }
-
 export default App;
