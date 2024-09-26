@@ -5,11 +5,15 @@ function Accordion ({ items }) {
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const handleClick = (nextIndex) => {
-    if (nextIndex === expandedIndex) {
-      setExpandedIndex(-1);
-    }
-    else setExpandedIndex(nextIndex);
-  }
+    console.log('Stale version of expanded index', expandedIndex)
+    return setExpandedIndex((currentExpandedIndex) => {
+      console.log('Up to date version', currentExpandedIndex)
+      if (currentExpandedIndex === nextIndex) {
+        return -1;
+      }
+      else return nextIndex;
+    });
+  };
 
   const renderedItems = items.map(({ id, label, content }, index) => {
     const isExpanded = index === expandedIndex;
@@ -18,7 +22,7 @@ function Accordion ({ items }) {
         {isExpanded ? <GoChevronDown/> : <GoChevronLeft/>}
       </span>
     );
-
+    
     return (
       <div key={id}>
         <div className="flex justify-between p-3 bg-gray-50 border-b items-center cursor-pointer" onClick={() => handleClick(index)}>
