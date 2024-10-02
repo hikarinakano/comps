@@ -29,9 +29,8 @@ function ModalPage() {
       <p>Vestibulum pretium tempor mauris, a vehicula sapien tincidunt a. Vivamus felis erat, lacinia vitae porta nec, tempus ut nulla. Duis at leo fermentum orci tristique dignissim ullamcorper tempus tellus. Sed sed maximus nibh, at molestie purus. Sed dignissim eros justo, id suscipit arcu ornare et. Nullam nibh est, tempor id eleifend eget, vestibulum sit amet massa. Ut volutpat nisi eget lorem finibus, a imperdiet urna commodo. Fusce eleifend tempus ante in lobortis. </p>
       <p>Etiam arcu dolor, malesuada ut mollis id, iaculis eu purus. Etiam lobortis et sem at imperdiet. Mauris at lacus eu urna molestie scelerisque quis nec sem. Aenean sed ultrices turpis. Pellentesque vel mauris et arcu ullamcorper efficitur pulvinar sit amet lectus. Suspendisse non lacus nec velit congue fermentum. Suspendisse nec lorem pretium, auctor tellus quis, pharetra felis. Mauris mauris dui, imperdiet nec maximus nec, vehicula a nulla. Fusce luctus mi in urna molestie, sodales vestibulum nulla dictum. </p>
       <p>Aliquam tincidunt non dolor id congue. Pellentesque eu suscipit dolor, et lobortis leo. In molestie, lorem condimentum pulvinar blandit, nunc ante sodales risus, nec varius orci elit quis diam. Morbi a nulla est. Cras magna diam, interdum convallis viverra nec, egestas a erat. Nunc eleifend, arcu non blandit lacinia, magna nisi fringilla eros, quis porttitor augue neque non lorem. Cras et velit fringilla, faucibus enim sed, tempor massa. Donec commodo elit at mauris pulvinar consequat. </p>
-
     </div>
-  )
+  );
 }
 
 export default ModalPage;
