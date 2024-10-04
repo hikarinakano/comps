@@ -1,12 +1,20 @@
-function Table({ data }) {
-  const renderedRows = data.map(({name, color, score}) => {
+import { Fragment } from "react";
+
+
+function Table({ data, config, keyFn }) {
+  const renderedHeaders = config.map(({ label, header }) => {
+    if (header) {
+      return <Fragment key={label}>{header()}</Fragment>
+    }
+    return <th key={label}>{label}</th>
+  })
+
+  const renderedRows = data.map((rowData) => {
+    const renderedCells = config.map(({label, render}) => {
+      return <td className="p-2" key={label}>{render(rowData)}</td>
+    })
     return (
-      <tr className="border-b">
-          <td className="p-3">{name}</td>
-          <td className="p-3">
-            <div className={`p-3 m-2 ${color}`}></div>
-          </td>
-          <td className="p-3">{score}</td>
+      <tr className="border-b" key={keyFn(rowData)}>{ renderedCells }
         </tr>
     )
   })
@@ -14,9 +22,7 @@ function Table({ data }) {
     <table className="table-auto border-spacing-2">
       <thead>
         <tr className="border-b-2">
-          <th>Fruit</th>
-          <th>Color</th>
-          <th>Score</th>
+          {renderedHeaders}
         </tr>
       </thead>
       <tbody>
