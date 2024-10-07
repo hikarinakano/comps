@@ -1,4 +1,4 @@
-// import Table from '../components/Table';
+import Table from '../components/Table';
 import SortableTable from '../components/SortableTable';
 
 function TablePage() {
@@ -32,7 +32,17 @@ function TablePage() {
 
   return (
     <div>
-      <SortableTable data={data} config={config} keyFn={keyFn}></SortableTable>
+      <div>
+        <b className='border-b-2'>Simple table</b>
+        <br></br>
+        <Table data={data} config={config} keyFn={keyFn}/>
+        <br></br>
+      </div>
+      <div>
+        <b className='border-b-2'>Table with sorting function</b>
+        <br></br>
+        <SortableTable data={data} config={config} keyFn={keyFn}></SortableTable>
+      </div>
     </div> 
   );
 }
