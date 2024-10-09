@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import Button from "../components/Button";
 import Panel from "../components/Panel";
+import { produce } from "immer";
 
 const INCREMENT_COUNT = 'increment-count';
 const DECREMENT_COUNT = 'decrement-count';
@@ -36,7 +37,7 @@ const reducer = (state, action) => {
 }
 
 function CounterPage({ initialCount }) {
-  const [state, dispatch] = useReducer(reducer, {
+  const [state, dispatch] = useReducer(produce(reducer), {
     count: initialCount,
     valueToAdd: 0,
   });
